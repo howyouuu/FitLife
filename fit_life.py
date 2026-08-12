@@ -1,16 +1,25 @@
-# Проект FitLife - MVP версия 1.0
-
 WATER_PER_KG = 30
 IN_LITERS = 1000
-line = ('-' * 40)
+line = '-' * 40
 print('Привет! Я твой помощник, расскажи немного о себе.')
 user_name = input('Как тебя зовут: ')
-try:
-    user_age = int(input('Сколько тебе лет: '))
-    user_weight = float(input('Твой вес в кг(например, 65.5): '))
-    user_height = float(input('Твой рост в метрах(например, 1.75): '))
-except ValueError:
-    print('Ошибка! Вы ввели некорректное число. Попробуйте ещё раз.')
+while True:
+    try:
+        user_age = int(input('Сколько тебе лет: '))
+    except ValueError:
+        print('Ошибка! Вы ввели некорректное число. Попробуйте ещё раз.')
+        user_age = int(input('Сколько тебе лет: '))
+    try:
+        user_weight = float(input('Твой вес в кг(например, 65.5): '))
+    except ValueError:
+        print('Ошибка! Вы ввели некорректное число. Попробуйте ещё раз.')
+        user_weight = float(input('Твой вес в кг(например, 65.5): '))
+    try:
+        user_height = float(input('Твой рост в метрах(например, 1.75): '))
+    except ValueError:
+        print('Ошибка! Вы ввели некорректное число. Попробуйте ещё раз.')
+        user_height = float(input('Твой рост в метрах(например, 1.75): '))
+    break
 bmi = user_weight / (user_height ** 2)  # расчёт индекса массы тела
 # расчёт рекомендуемой нормы воды в день и перевод из мл в л
 water_l = user_weight * WATER_PER_KG / IN_LITERS
