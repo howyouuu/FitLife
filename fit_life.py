@@ -2,7 +2,7 @@
 
 WATER_PER_KG = 30
 IN_LITERS = 1000
-
+line = ('-' * 40)
 print('Привет! Я твой помощник, расскажи немного о себе.')
 user_name = input('Как тебя зовут: ')
 try:
@@ -14,9 +14,9 @@ except ValueError:
 bmi = user_weight / (user_height ** 2)  # расчёт индекса массы тела
 # расчёт рекомендуемой нормы воды в день и перевод из мл в л
 water_l = user_weight * WATER_PER_KG / IN_LITERS
-print('-' * 40)
+print(line)
 print(f'Отчет для пользователя: {user_name} ({user_age} лет)')
 print(f'Твой Индекс Массы Тела: {round(bmi, 1)}')
 print(f'Рекомендуемая норма воды: {round(water_l, 2)} л. в день')
-print('-' * 40)
+print(line)
 print('Расчет окончен. Будьте здоровы!')
