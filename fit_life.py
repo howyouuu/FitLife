@@ -7,7 +7,7 @@ user_name = input('Как тебя зовут: ')
 while True:
     try:
         user_age = int(input('Сколько тебе лет: '))
-        break #ИИ подсказал куда лучше всего поставить break
+        break  # ИИ подсказал куда лучше всего поставить break
     except ValueError:
         print(error)
 while True:
